@@ -34,8 +34,8 @@ const registerNewUser = async (req, res) => {
     let config = {
         service: 'gmail',
         auth: {
-            user: 'dumo0533dm@gmail.com',
-            pass: 'cdbkxyacvohxlxzq'
+            user: 'cocktails4uinfo@gmail.com',
+            pass: process.env.EMAIL_APP_PASSWORD
         }
     }
     let transporter = nodemailer.createTransport(config);
