@@ -1,0 +1,34 @@
+.shipping-form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.shipping-form h1{
+    border-bottom: 2px solid black;
+}
+
+.shipping-form form{
+    width: 100%;
+}
+
+.shipping-choice{
+    display: flex;
+    flex-direction: column;
+}
+.shipping-choice div{
+    margin: 0.5rem 0;
+}
+
+.total-shipping{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.shipping-choice label {
+    font-size: 12px;
+    margin-right: 5px;
+    display: flex;
+}

@@ -1,0 +1,34 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    height: auto;
+  }
+  
+  
+  .navbar-links {
+    list-style-type: none;
+    display: flex;
+  }
+  .navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 20px 20px;
+    transition: 0.4s all;
+  }
+  
+
+  .navbar-links li a:hover {
+    color: #F9B900;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 720px){
+   
+     
+    .navbar {
+     display: none;
+    }
+  }

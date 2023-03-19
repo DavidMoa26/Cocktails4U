@@ -1,0 +1,20 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom-elements{
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icons{
+display: flex;
+justify-content: center;
+}
+
+.copy-right {
+    color: white;
+    font-weight: bold;
+  }

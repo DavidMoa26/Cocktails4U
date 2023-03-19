@@ -1,0 +1,38 @@
+.cart-container{
+    width: 100%;
+    height: auto;
+}
+
+.cart-container h2 {
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .cart-empty {
+    font-size: 20px;
+    color: rgb(84, 84, 84);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .back-to-store{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .back-to-store:hover{
+    opacity: 0.5;
+    transition: .3s;
+  }
+
+
+
+
+
+
+
+
+
+  

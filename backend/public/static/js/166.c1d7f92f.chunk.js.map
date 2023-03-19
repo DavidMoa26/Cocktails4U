@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/166.c1d7f92f.chunk.js","mappings":"6HAGA,UAHe,WACb,OAAO,yBAAK,UACd,C","sources":["components/admin/Orders.jsx"],"sourcesContent":["const Orders = () => {\r\n  return <div>Orders</div>;\r\n};\r\nexport default Orders;\r\n"],"names":[],"sourceRoot":""}

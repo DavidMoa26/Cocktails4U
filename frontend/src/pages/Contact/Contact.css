@@ -1,0 +1,35 @@
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+}
+
+.contact-section h1{
+    border-bottom: 10px solid black; 
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+.contact-section h2{
+    margin: 2rem 0 
+}
+
+.contact-us-form form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact-details{
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media(max-width:730px){
+
+    .contact-section h2{
+        font-size: 20px;
+    }
+}

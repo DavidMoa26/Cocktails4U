@@ -1,0 +1,91 @@
+.about-us-section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.about-us-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.about-us-section h1{
+    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 10px solid black;
+}
+
+.about-us-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 60%;
+}
+
+.img-content{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    height: 50vh;
+    width: 40%;
+    background-image:url('../../assets/about.webp');
+    background-size:cover
+}
+
+
+.about-us-section .about-us-content p{
+    font-size: 20px;
+    font-weight: bold;
+    width: 50%;
+    padding-top: 2rem;
+
+}
+
+@media (max-width: 1000px){
+    .about-us-section .about-us-content p{
+        font-size: 15px;
+        font-weight: bold;
+        width: 90%;
+    
+    }
+
+    .img-content{
+        height: 40vh;
+        width: 50%;
+        background-size:cover
+    }
+  
+}
+@media (max-width: 700px){
+    .about-us-content{
+        height: auto;
+        justify-content: center;
+        
+    }
+
+    .about-us-section .about-us-content p{
+        font-size: 12px;
+        font-weight: bold;
+        width: 90%;
+        padding-top: 2rem;
+    
+    }
+
+    .img-content{
+        height: 30vh;
+        width: 80%;
+        background-size:cover
+    }
+
+
+    .about-us-text{
+        width: 90%;
+        height:auto;
+        padding-bottom: 1rem;
+    }
+
+  
+}
