@@ -184,5 +184,10 @@ C0C7CC
  .header-logo{
   display: none;
  }
+ .header-menu{
+  flex-direction: column-reverse;
+} 
+
+
   }
 

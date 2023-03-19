@@ -19,9 +19,6 @@ app.use(cors());
 
 app.use(express.static(path.join('public')))
 
-// app.get('/', (req, res) => {
-//     res.redirect(`${process.env.CLIENT_URL}/login`);
-// })
 app.use('/api/user', register);
 app.use('/products', productsRoute)
 
