@@ -20,8 +20,22 @@
 }
 
 
+.cocktail-size{
+  font-size: 10px;
+}
+
+.sub-title p{
+  width: 100%;
+}
+
+.cocktail-content{
+  font-size: 12px;
+  color: #aeb4b8;
+}
+
+
 .product img {
-    width: 50%;
+    width: 100px;
     height: auto;
 }
 .product .details {
@@ -75,15 +89,22 @@
   font-weight: bold;
 }
 
-@media (max-width:600px){
+@media (max-width:570px){
   .product {
-
-    border-radius: 0;
-    margin: 1rem 0;
+    flex-direction: row;
+    margin: 0.5rem 5px;
+    width: 100%;
   }
 
-  .product button{
-    border-radius: 0;
+   .product .details {
+    width: 35%;
   }
+
+  .product-btn{
+    width:26%;
+    
+  }
+ 
+
   
 }

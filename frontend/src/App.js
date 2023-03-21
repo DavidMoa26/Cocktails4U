@@ -24,6 +24,9 @@ const Home = React.lazy(() => import('./pages/Home/Home'));
 
 i18nSettings();
 
+// WEBP
+// categories 
+
 const App = () => {
 
   let routes = (

@@ -1,38 +1,18 @@
 .translation-container{
-    position: absolute;
-    top :0;
-    left:0;
     display: flex;
     flex-direction: column;
     z-index: 3;
-    width: 80px;
+    width: auto;
+    margin: 0 0.5rem;
 }
-.translation-icons{
+.translation-icon{
     display: flex;
     cursor: pointer;
-    position: absolute;
-    left: 8px;
-    top:2px
+    align-items: center;
 }
 
-.translation-languages{
-    margin-top: 35px;
-    position: absolute;
-    opacity: 0; 
-}
 
-.dropdown-lang{
-    margin-top: 35px;
-    padding: 2px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    border-radius: 10px;
-    border: 1px solid white;
-    color: white;
-    opacity: 1;
-    transition: opacity .2s ease-in-out;
-}
-.dropdown-lang span:hover{
+.translation-icon:hover{
     opacity: 0.5;
+    transition: .3s;
 }

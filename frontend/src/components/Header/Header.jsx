@@ -55,29 +55,35 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Translation />
-      <div className={bump}>
-        <div className="cart" onClick={() => setIsOpen(true)}>
-          <ShoppingCartIcon style={{ fontSize: "3rem" }} />
-          <span className="bag-qty">
-            <span>{cart.cartItems.length}</span>
-          </span>
-        </div>
-        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-          <Cart onClose={() => setIsOpen(false)} />
-        </Modal>
+      <MobileMenu />
+      <div className="header-logo">
+        <img
+          width="250px"
+          height="auto"
+          src={Logo}
+          alt="logo"
+          loading="eager"
+          title="logo"
+          onClick={() => navigate("/")}
+        />
       </div>
-
-      <div className="header-menu">
-        <div className="header-logo">
-          <img src={Logo} alt="logo" onClick={() => navigate("/")} />
-        </div>
+      <div>
         <NavMenu />
-        <MobileMenu />
       </div>
       <div className="header-buttons">
+        <div className={bump}>
+          <div className="cart" onClick={() => setIsOpen(true)}>
+            <ShoppingCartIcon style={{ fontSize: "2rem" }} />
+            <span className="bag-qty">
+              <span>{cart.cartItems.length}</span>
+            </span>
+          </div>
+          <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+            <Cart onClose={() => setIsOpen(false)} />
+          </Modal>
+        </div>
         {auth._id ? (
-          <div className="">
+          <div>
             {auth.isAdmin ? (
               <button className="left-btn" onClick={adminHandler}>
                 {t("Control Panel")}
@@ -89,6 +95,7 @@ const Header = () => {
           <div>
             <button onClick={loginHandler}>{t("Login")}</button>
             <button onClick={registerHandler}>{t("Register")}</button>
+            <Translation />
           </div>
         )}
       </div>

@@ -24,7 +24,7 @@
 
 
 
-  @media (max-width: 720px){
+  @media (max-width: 1200px){
   
      .menu-btn{
       display: flex;
@@ -58,13 +58,13 @@
     position: absolute;
     list-style-type: none;
     text-align: center;
-    top: 30%;
+    top: 25%;
     width: 100%
   }
 
   .mobile-menu ul li {
     
-    margin: 1rem 0;
+    margin: 2rem 0;
   }
 
   .mobile-menu ul li a{
@@ -104,6 +104,7 @@
   .mobile-menu-hidden ul li {
     
     margin: 5%;
+    margin: 2rem 0;
   }
 
   .mobile-menu-hidden ul li a{

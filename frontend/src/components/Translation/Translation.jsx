@@ -1,4 +1,4 @@
-import i18n from "i18next";
+import i18n, { changeLanguage } from "i18next";
 import i18next from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
@@ -9,7 +9,7 @@ import "./Translation.css";
 import { MdLanguage } from "react-icons/md";
 import { GoArrowSmallDown } from "react-icons/go";
 i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
+  .use(initReactI18next)
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
@@ -52,9 +52,13 @@ const Translation = () => {
     },
   ];
 
-  const [drop, setDrop] = useState(false);
+  const [drop, setDrop] = useState(true);
 
-  const dropMenu = ` ${drop ? `dropdown-lang` : "translation-languages"}`;
+  const changeLanguageHandler = () => {
+    currentLanguage.country_code === "he"
+      ? i18next.changeLanguage("en")
+      : i18next.changeLanguage("he");
+  };
 
   const currentLanguageCode = cookies.get("i18next") || "he";
   const currentLanguage = languages.find((l) => l.code === currentLanguageCode);
@@ -73,29 +77,11 @@ const Translation = () => {
       onClick={() => setDrop(!drop)}
       onMouseLeave={() => setDrop(false)}
     >
-      <div className="translation-icons">
-        <GoArrowSmallDown
-          style={{
-            color: "white",
-            fontSize: "1rem",
-            position: "relative",
-            right: "1rem",
-          }}
+      <div className="translation-icon">
+        <MdLanguage
+          style={{ color: "white", fontSize: "2rem" }}
+          onClick={changeLanguageHandler}
         />
-        <MdLanguage style={{ color: "white", fontSize: "2rem" }} />
-      </div>
-
-      <div className={dropMenu}>
-        {languages.map(({ code, name, country_code }) => (
-          <span
-            key={country_code}
-            onClick={() => {
-              i18next.changeLanguage(code);
-            }}
-          >
-            {name}
-          </span>
-        ))}
       </div>
     </div>
   );

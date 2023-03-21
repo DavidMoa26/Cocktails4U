@@ -1,5 +1,6 @@
 {
     "delete" : "מחיקה",
+    "size : 200 ml" : "גודל : 200 מ''ל",
     "Clean cart" : "נקה סל",
     "Total" : "סה''כ",
     "Continue Payment" : "להמשך תשלום",
@@ -29,6 +30,7 @@
     "Cocktails" : "קוקטיילים",
     "Bar Tools" : "כלי-בר",
     "About Us" : "קצת עלינו",
+    "The Story of Cocktails4U" : "הסיפור של Cocktails4U",
     "Contact Us" : "צור קשר",
     "Shipping Policy" : "מדיניות משלוחים",
     "Shakers" : "שייקרים",
@@ -44,7 +46,12 @@
     "Close" : "סגירה",
     "All Tools" : "כל הכלים",
     "All Cocktails" : "כל הקוקטיילים",
-    "Cocktails Categories" : "סוגי קוקטיילים",
+    "Our Cocktails Categories" : "סוגי הקוקטיילים שלנו",
+    "COCKTAIL4U's barware" : "כלי הבר של Cocktails4U",
+    "Please fill in the following fields :" : " אנא מלאו את השדות הבאים :  ",
+    "Our shipping policy" : "מדיניות המשלוחים שלנו",
+    "Login to the site - existing users" : "התחברות לאתר - משתמשים קיימים",
+    "Registration to the site - new users" : "רישום לאתר - משתמשים חדשים",
 
 
     "שייקר טין-טין - זהב" : "שייקר טין-טין - זהב",

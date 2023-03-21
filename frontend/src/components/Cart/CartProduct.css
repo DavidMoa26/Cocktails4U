@@ -30,8 +30,8 @@
   
   .product-details :nth-child(1){
     padding-bottom: 0.2rem;
-    font-size: 20px;
-    font-weight: bold;
+    text-align: right;
+    font-size: 15px;
   }
 
   .product-details{
@@ -46,6 +46,7 @@
     height: 1rem;
     border: 0;
     background-color: transparent;
+    font-size: 12px;
     color: red;
     text-decoration: underline;
     cursor: pointer;

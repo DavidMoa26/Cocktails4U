@@ -5,6 +5,12 @@
     align-items: center;
     width: 100%;
   }
+
+  .carousel{
+    position: relative;
+    width: 100%;
+    bottom: 2rem;
+  }
   
   .popular-products h2{
     font-size: 40px;
@@ -52,13 +58,6 @@
 
 
 
-  .home-section.footer-container h1{
-    padding-top: 5rem;
-    color: white;
-    font-size: 20px;
-  }
-
-
   @media (max-width: 700px){
     .video {
       display: none;
@@ -76,7 +75,7 @@
 
 
   .welcome h1{
-    margin: 2rem 0;
+    margin: 1rem 0;
     font-size: 3rem;
   }
 
@@ -85,7 +84,7 @@
     font-weight: 700;
     font-size: 1.2rem;
     width: 50%;
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
 
   .footer-container{
@@ -106,6 +105,9 @@
     display: flex;
     justify-content: center;
   }
+  .footer-form label{
+    color: white
+  }
 
   .footer-form form{
     display: flex;
@@ -115,13 +117,15 @@
   }
 
   .footer-form form button{
-    background-color: #F9B900;
-    color: black;
+    border-radius: 8px;
+    background-color:black;
+    color: #F9B900;
+    border: 3px solid #F9B900;
   }
 
-  .footer-container h1{
-    padding-top: 5rem;
-    color: white;
+  .footer-container h2{
+    padding-top: 2rem;
+    color: #F9B900;
     font-size: 60px;
   }
 
@@ -135,15 +139,24 @@
       .footer-container h1{
         font-size: 30px;
       }
-
-
     }
+
+  @media (max-width: 1015px){
+    .footer-container h2{
+      font-size: 40px;
+    }
+    }
+
+
   @media (max-width: 700px){
+
+    .footer-container h2{
+      font-size: 30px;
+    }
 
     .welcome p {
       width: 90%;
       font-size: 12px;
-      font-weight: 500;
     }
 
     .welcome h1{
@@ -153,17 +166,21 @@
     .footer-container h1{
       font-size: 20px;
     }
-
-
-
     }
+
+    @media (max-width: 520px){
+
+      .footer-container h2{
+        font-size: 20px;
+      }
+  
+  
+      }
+
   @media (max-width: 340px){
 
-    .video-text h1{
-      font-size: 40px;
-    }
-    .video-text p{
-      font-size: 20px;
+    .footer-container h2{
+      font-size: 15px;
     }
 
 

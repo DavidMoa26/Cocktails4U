@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import FilteredProducts from "../../components/FilteredProducts/FilteredProducts";
 import Loader from "../../components/Loader/Loader";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const CocktailsCategory = () => {
   const { t } = useTranslation();
@@ -38,7 +39,15 @@ const CocktailsCategory = () => {
   return (
     <>
       <section className="cocktails-category-section">
-        <h1>{t("Cocktails Categories")}</h1>
+        <Helmet>
+          <title>{t("Cocktails Categories")}</title>
+          <meta
+            name="description"
+            content="קטגוריית הקוקטיילים שלנו - ניתן לבחור בין קוקטיילים אשר רקחנו בעצמנו או קוקטיילים קלאסים מפורסמים"
+          />
+          <link rel="canonical" href="/product-category/cocktails" />
+        </Helmet>
+        <h1>{t("Our Cocktails Categories")}</h1>
         <div className="cocktails-category">
           {categories.map((category) => (
             <div
@@ -48,7 +57,13 @@ const CocktailsCategory = () => {
                 setCategoryClicked(true);
               }}
             >
-              <h3>{t(category.title)}</h3>
+              <h2
+                style={{
+                  backgroundImage: "linear-gradient(to right, #F9B900, black)",
+                }}
+              >
+                {t(category.title)}
+              </h2>
             </div>
           ))}
         </div>

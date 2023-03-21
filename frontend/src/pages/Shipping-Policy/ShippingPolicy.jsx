@@ -1,11 +1,17 @@
 import "./ShippingPolicy.css";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 const ShippingPolicy = () => {
   const { t } = useTranslation();
 
   return (
     <section className="shipping-policy-section">
-      <h1>{t("Shipping Policy")}</h1>
+      <Helmet>
+        <title>מדיניות המשלוחים</title>
+        <meta name="description" content="כל המידע על המשלוחים שלנו" />
+        <link rel="canonical" href="/shipping-policy" />
+      </Helmet>
+      <h1>{t("Our shipping policy")}</h1>
       <ul>
         <li>
           {t(

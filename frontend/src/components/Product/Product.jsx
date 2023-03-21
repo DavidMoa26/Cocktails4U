@@ -19,9 +19,22 @@ const Product = ({ product }) => {
 
   return (
     <div key={product._id} className="product">
-      <img src={product.image} alt={product.name} />
+      <img
+        src={product.image}
+        alt={product.name}
+        width="100px"
+        height="auto"
+        loading="eager"
+        title="product-image"
+      />
       <div className="details">
+        {product.category === "cocktails" && (
+          <p className="cocktail-size">{t("size : 200 ml")}</p>
+        )}
         <h3>{t(`${product.name}`)}</h3>
+        {product.category === "cocktails" && (
+          <p className="cocktail-content">{product.content}</p>
+        )}
         <div className="price">
           <span dir="rtl">
             {product.price}{" "}

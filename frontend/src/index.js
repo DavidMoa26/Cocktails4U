@@ -11,6 +11,8 @@ import cartReducer, { getTotals } from './store/cartSlice';
 import authReducer, { loadUser } from './store/authSlice';
 import usersReducer, { fetchUsers } from './store/usersSlice';
 
+import { HelmetProvider } from 'react-helmet-async'
+
 
 
 
@@ -35,7 +37,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </BrowserRouter>
   </Provider>
 );

@@ -5,6 +5,7 @@ import { loginUser } from "../../store/authSlice";
 import Loader from "../../components/Loader/Loader";
 import { useTranslation } from "react-i18next";
 import FormInput from "../../components/FormInput/FormInput";
+import { Helmet } from "react-helmet-async";
 import "./Login.css";
 
 const Login = () => {
@@ -33,7 +34,12 @@ const Login = () => {
 
   return (
     <section className="login-section">
-      <h1>{t("Login")}</h1>
+      <Helmet>
+        <title>התחברות לאתר</title>
+        <meta name="description" content="טופס התחברות לאתר למשתמשים קיימים" />
+        <link rel="canonical" href="/login" />
+      </Helmet>
+      <h1>{t("Login to the site - existing users")}</h1>
       {auth && auth.loginStatus === "rejected" ? (
         <h3 className="login-error">{t(`${auth.loginError.message}`)}</h3>
       ) : auth && auth.loginStatus === "pending" ? (

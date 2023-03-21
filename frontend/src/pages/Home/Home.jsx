@@ -5,6 +5,9 @@ import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import Loader from "../../components/Loader/Loader";
 import ContactForm from "../../components/ContactForm/ContactForm";
+import ImageCarousel from "../../components/ImageCarousel/ImageCarousel";
+
+import { Helmet } from "react-helmet-async";
 
 const PopularProducts = () => {
   const { items: products } = useSelector((state) => state.products);
@@ -27,6 +30,15 @@ const Home = () => {
 
   return (
     <section className="home-section">
+      <Helmet>
+        <title>{t("Welcome to Cocktails4U")}</title>
+        <meta
+          name="description"
+          content="כאן תמצאו את כל כלי הבר והקוקטיילים הכי פופולארים שלנו"
+        />
+        <link rel="canonical" href="/" />
+      </Helmet>
+      <ImageCarousel />
       <div className="middle-items">
         <div className="welcome">
           <h1>{t("Welcome to Cocktails4U")}</h1>
@@ -51,7 +63,7 @@ const Home = () => {
         </section>
       </div>
       <div className="footer-container">
-        <h1>{t("Fill your details and we will get back to you as soon")}</h1>
+        <h2>{t("Fill your details and we will get back to you as soon")}</h2>
         <div className="footer-form">
           <ContactForm />
         </div>

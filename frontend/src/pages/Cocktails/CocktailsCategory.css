@@ -54,7 +54,7 @@
    transition: .3s;
 }
 
-.cocktails-category-section h3{
+.cocktails-category-section h2{
     width: 50%;
     z-index: 1;
     font-size: 12px;
@@ -89,7 +89,17 @@
 
 @media(max-width:1200px){
     .cocktails-category-section div{
-        margin: 1rem 0;
+        margin:0;
+    }
+
+}
+@media(max-width:599px){
+    .cocktails-category :nth-child(-n + 3){
+        background-image: linear-gradient(to right, #F9B900, black);
+        width: 150px;
+        height: 55px;
+        border: 0;
+        margin: 0.2rem;
     }
 
 }

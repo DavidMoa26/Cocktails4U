@@ -27,3 +27,16 @@
     font-size: 13px;
     color: #8086a9;
   }
+
+  @media (max-width: 1000px){
+
+    .input-form-container {
+      width: auto;
+      height: 60px;
+      margin: 0.5rem;
+    }
+
+    .input-form-container input {
+      height: 10px;
+    }
+  }

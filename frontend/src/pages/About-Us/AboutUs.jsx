@@ -1,11 +1,22 @@
 import "./AboutUs.css";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
   const { t } = useTranslation();
   return (
     <section className="about-us-section">
-      <h1>{t("About Us")}</h1>
+      <Helmet>
+        <title>{t("הסיפור של Cocktails4U")}</title>
+        <meta
+          name="description"
+          content={t(
+            "It all started several years ago, when we researched the leading bars in Israel and the world where we gained professional knowledge, we always dreamed of sharing this knowledge"
+          )}
+        />
+        <link rel="canonical" href="/about-us" />
+      </Helmet>
+      <h1>{t("הסיפור של Cocktails4U")}</h1>
       <div className="about-us-content">
         <div className="img-content"></div>
         <div className="about-us-text">

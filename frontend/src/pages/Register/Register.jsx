@@ -6,6 +6,7 @@ import { logout } from "../../store/authSlice";
 import { useTranslation } from "react-i18next";
 import Loader from "../../components/Loader/Loader";
 import FormInput from "../../components/FormInput/FormInput";
+import { Helmet } from "react-helmet-async";
 import "./Register.css";
 
 const Register = () => {
@@ -46,7 +47,12 @@ const Register = () => {
 
   return (
     <section className="register-section">
-      <h1>{t("Register")}</h1>
+      <Helmet>
+        <title>הרשמה לאתר</title>
+        <meta name="description" content="טופס הרשמה לאתר למשתמשים חדשים" />
+        <link rel="canonical" href="/register" />
+      </Helmet>
+      <h1>{t("Registration to the site - new users")}</h1>
       {wrongPasswords && auth.registerStatus !== "rejected" ? (
         <h3 className="register-error">{t("Invalid Passwords")}</h3>
       ) : auth.registerStatus === "rejected" ? (

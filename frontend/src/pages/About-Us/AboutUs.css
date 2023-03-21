@@ -22,7 +22,7 @@
     align-items: center;
     justify-content: center;
     height: 50vh;
-    width: 60%;
+    width: 50%;
 }
 
 .img-content{
@@ -30,7 +30,7 @@
     flex-direction: row;
     text-align: center;
     height: 50vh;
-    width: 40%;
+    width: 50%;
     background-image:url('../../assets/about.webp');
     background-size:cover
 }
@@ -39,8 +39,8 @@
 .about-us-section .about-us-content p{
     font-size: 20px;
     font-weight: bold;
-    width: 50%;
-    padding-top: 2rem;
+    width: 70%;
+    padding-top: 5rem;
 
 }
 
@@ -48,7 +48,7 @@
     .about-us-section .about-us-content p{
         font-size: 15px;
         font-weight: bold;
-        width: 90%;
+        width: 95%;
     
     }
 
@@ -61,31 +61,33 @@
 }
 @media (max-width: 700px){
     .about-us-content{
-        height: auto;
-        justify-content: center;
-        
+        flex-direction: column
     }
 
     .about-us-section .about-us-content p{
-        font-size: 12px;
-        font-weight: bold;
-        width: 90%;
         padding-top: 2rem;
-    
+    }
+
+    .about-us-text{
+        height: auto;
+    }
+
+    .about-us-text{
+        width: 80%;
     }
 
     .img-content{
-        height: 30vh;
-        width: 80%;
-        background-size:cover
+        width: 100%;
+    }
+    
+ 
+}
+@media (max-width: 480px){
+
+    .about-us-section .about-us-content p{
+        font-size: 12px;
     }
 
-
-    .about-us-text{
-        width: 90%;
-        height:auto;
-        padding-bottom: 1rem;
-    }
-
-  
+    
+ 
 }

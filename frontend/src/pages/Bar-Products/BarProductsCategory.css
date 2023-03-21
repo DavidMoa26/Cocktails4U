@@ -27,6 +27,8 @@
 
 
 
+
+
 .bar-tools-category :nth-child(1){
     background-image: url('../../assets/shakers.webp');
 }
@@ -34,10 +36,10 @@
     background-image: url('../../assets/jiggers.webp');
 }
 .bar-tools-category :nth-child(3){
-    background-image: url('../../assets/strainers.webp');
+    background-image:url('../../assets/muddlers.webp');
 }
 .bar-tools-category :nth-child(4){
-    background-image: url('../../assets/muddlers.webp');
+    background-image: url('../../assets/strainers.webp');
 }
 .bar-tools-category :nth-child(5){
     background-image: url('../../assets/spoons.webp');
@@ -62,21 +64,25 @@
     background-size: cover;
     opacity: 0.8;
 }
+
+.category-titles div {
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    width: 110px;
+    height: 40px;
+    border: 2px solid white;
+    opacity: 1;
+    
+}
+
 .bar-tools-category div:hover{
    opacity: 0.5;
    transition: .3s;
 }
 
-.bar-tools-category h3{
-    width: 80%;
-    z-index: 1;
-    font-size: 15px;
-    padding: 0.5rem;
-    color: rgb(0, 0, 0);
-    border: 3px solid black;
-    border-radius: 10px;
-    font-weight: 500;
-}
+
+
 
 .all-bar-tools{
     display: flex;
@@ -87,8 +93,19 @@
 
 @media(max-width:1200px){
     .bar-products-section div{
-        margin: 1rem 0;
+        margin: 0;
     }
+
+}
+@media(max-width:570px){
+    .bar-tools-category :nth-child(-n + 6){
+        background-image: linear-gradient(to right, #F9B900, black);
+        width: 100px;
+        height: 40px;
+        border: 0;
+        margin: 0.2rem;
+    }
+
 
 }
 
