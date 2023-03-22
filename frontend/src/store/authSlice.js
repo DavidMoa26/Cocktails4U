@@ -12,6 +12,7 @@ const initialState = {
     loginStatus: "",
     loginError: "",
     userLoaded: false,
+    sendStatus: ""
 };
 
 
@@ -21,7 +22,7 @@ export const registerUser = createAsyncThunk(
         try {
             const token = await axios.post(`${process.env.REACT_APP_API}/api/user/register`, {
                 name: values.name,
-                email: values.email,
+                email: values.email.toLowerCase(),
                 password: values.password,
             })
             localStorage.setItem("token", token.data);
@@ -35,14 +36,31 @@ export const registerUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk(
     "auth/loginUser",
-    async (values, { rejectWithValue }) => {
+    async (values) => {
         try {
             const token = await axios.post(`${process.env.REACT_APP_API}/api/user/login`, {
-                email: values.email,
+                email: values.email.toLowerCase(),
                 password: values.password,
             })
             localStorage.setItem("token", token.data)
             if (token) return token.data
+        } catch (error) {
+            throw new Error(error.response.data);
+        }
+    }
+)
+
+export const contact = createAsyncThunk(
+    "auth/contact",
+    async (values) => {
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API}/api/user/contact`, {
+                name: values.name,
+                email: values.email,
+                phone: values.phone,
+                message: values.message
+            })
+            if (response) return response.data
         } catch (error) {
             throw new Error(error.response.data);
         }
@@ -140,8 +158,14 @@ const authSlice = createSlice({
                 loginError: action.error,
             }
         })
+        builder.addCase(contact.pending, (state, action) => {
+            return { ...state, sendStatus: 'pending' }
+        })
+        builder.addCase(contact.fulfilled, (state, action) => {
+            return { ...state, sendStatus: 'success' }
+        })
     },
 })
 
-export const { loadUser, logout } = authSlice.actions
+export const { loadUser, logout, } = authSlice.actions
 export default authSlice.reducer

@@ -18,6 +18,23 @@ export const fetchUsers = createAsyncThunk(
         }
     })
 
+export const registerUser = createAsyncThunk(
+    "auth/registerUser",
+    async (values) => {
+        try {
+            const token = await axios.post(`${process.env.REACT_APP_API}/api/user/register`, {
+                name: values.name,
+                email: values.email.toLowerCase(),
+                password: values.password,
+            })
+            localStorage.setItem("token", token.data);
+            return token.data;
+
+        } catch (error) {
+            throw new Error(error.response.data)
+        }
+    }
+)
 
 const usersSlice = createSlice({
     name: "users",

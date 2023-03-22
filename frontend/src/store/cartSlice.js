@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
     cartItems: localStorage.getItem("cartItems")
@@ -7,6 +8,21 @@ const initialState = {
     cartTotalQuantity: 0,
     cartTotalAmount: 0,
 };
+
+export const paymentRequest = createAsyncThunk(
+    "cart/paymentRequest",
+    async (values) => {
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API}/api/payment`, {
+                paymentInfo: values
+            })
+            if (response)
+                console.log(response.data);
+        } catch (error) {
+            throw new Error(error.response.data);
+        }
+    }
+)
 
 const cartSlice = createSlice({
     name: "cart",

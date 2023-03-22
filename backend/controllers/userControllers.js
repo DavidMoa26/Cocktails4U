@@ -6,6 +6,7 @@ const nodemailer = require("nodemailer");
 const Mailgen = require('mailgen')
 
 const registerNewUser = async (req, res) => {
+
     const schema = Joi.object({
         name: Joi.string().min(2).max(15).required(),
         email: Joi.string().min(3).max(200).required().email(),
@@ -134,5 +135,60 @@ const getUsers = async (req, res) => {
         res.status(500).send(error);
     }
 }
+const contact = async (req, res) => {
 
-module.exports = { registerNewUser, login, validateMail, getUsers }
+    const { name, email, phone, message } = req.body;
+
+    let config = {
+        service: 'gmail',
+        auth: {
+            user: 'cocktails4uinfo@gmail.com',
+            pass: process.env.EMAIL_APP_PASSWORD
+        }
+    }
+    let transporter = nodemailer.createTransport(config);
+
+    let mailGen = new Mailgen({
+        theme: 'default',
+        product: {
+            name: 'Cocktails4U',
+            link: 'https://www.cocktails4u.co.il'
+        },
+        textDirection: 'rtl'
+    })
+
+    let response = {
+        body: {
+            table: {
+                data: [
+                    {
+                        שם: name,
+                        מייל: email,
+                        הודעה: message,
+                        טלפון: phone,
+
+                    }
+                ],
+            }
+        }
+    }
+
+    let mail = mailGen.generate(response)
+    let msg = {
+        from: 'Cocktails4U',
+        to: 'cocktails4uinfo@gmail.com',
+        subject: 'הודעה',
+        html: mail
+    }
+
+    transporter.sendMail(msg).then(() => {
+        return res.status(200).json({ msg: 'Email sent successfully' })
+    })
+        .catch((err) => {
+            return res.status(500).json({ msg: err })
+        })
+
+
+}
+
+module.exports = { registerNewUser, login, validateMail, getUsers, contact }

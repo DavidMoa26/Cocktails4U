@@ -18,6 +18,7 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [qtyIsChanged, setQtyIsChanged] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const bump = `nav-bag ${qtyIsChanged ? `bump` : ""}`;
 
   const auth = useSelector((state) => state.auth);
@@ -50,8 +51,6 @@ const Header = () => {
       clearTimeout(timer);
     };
   }, [cart]);
-
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="header">
@@ -90,6 +89,7 @@ const Header = () => {
               </button>
             ) : null}
             <button onClick={logoutHandler}>{t("Logout")}</button>
+            <Translation />
           </div>
         ) : (
           <div>

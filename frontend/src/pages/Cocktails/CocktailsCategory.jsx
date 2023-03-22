@@ -5,6 +5,7 @@ import FilteredProducts from "../../components/FilteredProducts/FilteredProducts
 import Loader from "../../components/Loader/Loader";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import CustomCocktails from "../../components/CustomCocktail/CustomCocktails";
 
 const CocktailsCategory = () => {
   const { t } = useTranslation();
@@ -87,13 +88,17 @@ const CocktailsCategory = () => {
               />
             ))
           ) : categoryClicked ? (
-            categories.map((category) => (
-              <FilteredProducts
-                key={Math.random()}
-                filter={category.title}
-                clicked={category.isClicked}
-              />
-            ))
+            categories.map((category) =>
+              category.title !== "Custom Cocktails" ? (
+                <FilteredProducts
+                  key={Math.random()}
+                  filter={category.title}
+                  clicked={category.isClicked}
+                />
+              ) : (
+                <CustomCocktails />
+              )
+            )
           ) : status === "pending" ? (
             <Loader />
           ) : null}

@@ -6,6 +6,10 @@
     "Go Shopping" : "Go Shopping",
     "Login / Register to get discount" : "Login / Register to get discount",
     "Product" : "Product",
+    "Id" : "Id",
+    "Card validity" : "Card validity",
+    "Card Number" : "Card Number",
+    
     "First Name" : "First Name",
     "Last Name" : "Last Name",
     "Full Name" : "Full Name",
@@ -54,6 +58,7 @@
     "Our shipping policy" : "Our shipping policy",
     "Login to the site - existing users" : "Login to the site - existing users",
     "Registration to the site - new users" : "Registration to the site - new users",
+    "form has been sent successfully !" : "form has been sent successfully !",
 
     "שייקר טין-טין - זהב" : "Tin-Tin Shaker - Gold",
     "שייקר טין-טין - שחור" : "Tin-Tin Shaker - Black",

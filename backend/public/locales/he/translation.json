@@ -6,6 +6,9 @@
     "Continue Payment" : "להמשך תשלום",
     "Go Shopping" : "בחזרה לחנות",
     "Product" : "מוצר",
+    "Id" : "ת.ז",
+    "Card validity" : "תוקף הכרטיס",
+    "Card Number" : "מספר הכרטיס",
     "First Name" : "שם פרטי",
     "Last Name" : "שם משפחה",
     "Phone" : "טלפון",
@@ -52,6 +55,7 @@
     "Our shipping policy" : "מדיניות המשלוחים שלנו",
     "Login to the site - existing users" : "התחברות לאתר - משתמשים קיימים",
     "Registration to the site - new users" : "רישום לאתר - משתמשים חדשים",
+    "form has been sent successfully !" : "הטופס נשלח בהצלחה !",
 
 
     "שייקר טין-טין - זהב" : "שייקר טין-טין - זהב",

@@ -1,0 +1,13 @@
+.cocktail-step{
+    padding-top: 5rem;
+    display: flex;
+}
+.cocktail-step div{
+    margin: 1rem;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+.cocktail-step div:hover{
+    opacity: 0.7;
+    transition: .3s;
+}

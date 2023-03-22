@@ -6,6 +6,7 @@ var register = require('./routes/user')
 const bodyParser = require('body-parser')
 const dbConnect = require('./db');
 const productsRoute = require('./routes/product')
+const paymentRoute = require('./routes/payment')
 const url = require('url');
 
 dotenv.config({ path: path.resolve(__dirname, './.env') })
@@ -18,9 +19,16 @@ app.use(express.json());
 app.use(cors());
 
 app.use(express.static(path.join('public')))
-
+app.use((req, res, next) => {
+    if (req.header('x-forwarded-proto') !== 'https') {
+        res.redirect(`https://${req.header('host')}${req.url}`);
+    } else {
+        next();
+    }
+});
 app.use('/api/user', register);
 app.use('/products', productsRoute)
+app.use('/api/payment', paymentRoute)
 
 app.use((req, res, next) => {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'))

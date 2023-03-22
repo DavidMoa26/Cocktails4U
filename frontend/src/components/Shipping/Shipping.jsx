@@ -1,23 +1,35 @@
 import "../FormInput/FormInput";
 import FormInput from "../FormInput/FormInput";
+import { paymentRequest } from "../../store/cartSlice";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./Shipping.css";
 import { TbCurrencyShekel } from "react-icons/tb";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Shipping = ({ total }) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const cart = useSelector((state) => state.cart);
+  console.log(cart);
 
   const [shippingDetails, setShippingDetails] = useState({
+    id: "",
     name: "",
     phone: "",
     address: "",
     message: "",
     shipping: total > 349 ? 0 : 70,
+    cardNumber: "",
+    expDate: "",
+    CVV: "",
   });
 
   const submitHandler = (e) => {
     e.preventDefault();
+    dispatch(paymentRequest(shippingDetails));
   };
 
   const calculateShipping = (e) => {
@@ -32,6 +44,13 @@ const Shipping = ({ total }) => {
     <div className="shipping-form">
       <h1>מידע למשלוח</h1>
       <form onSubmit={submitHandler}>
+        <FormInput
+          label={t("Id")}
+          type="text"
+          onChange={(e) =>
+            setShippingDetails({ ...shippingDetails, id: e.target.value })
+          }
+        />
         <FormInput
           label={t("Full Name")}
           type="text"
@@ -65,6 +84,41 @@ const Shipping = ({ total }) => {
             setShippingDetails({ ...shippingDetails, message: e.target.value })
           }
         />
+        <div className="credit-card">
+          <FormInput
+            label={t("Card Number")}
+            type="text"
+            onChange={(e) =>
+              setShippingDetails({
+                ...shippingDetails,
+                cardNumber: e.target.value,
+              })
+            }
+          />
+          <FormInput
+            label={t("Card validity")}
+            type="date"
+            placeholder={t(
+              "Ex : Leave the delivery at the door if no one is home"
+            )}
+            onChange={(e) =>
+              setShippingDetails({
+                ...shippingDetails,
+                expDate: e.target.value,
+              })
+            }
+          />
+          <FormInput
+            label={t("CVV")}
+            type="text"
+            onChange={(e) =>
+              setShippingDetails({
+                ...shippingDetails,
+                CVV: e.target.value,
+              })
+            }
+          />
+        </div>
         <div className="shipping-choice">
           <div>
             <label>

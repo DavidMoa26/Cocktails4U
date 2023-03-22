@@ -1,4 +1,4 @@
-import i18n, { changeLanguage } from "i18next";
+import i18n from "i18next";
 import i18next from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
@@ -7,7 +7,6 @@ import cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import "./Translation.css";
 import { MdLanguage } from "react-icons/md";
-import { GoArrowSmallDown } from "react-icons/go";
 i18n
   .use(initReactI18next)
   .use(LanguageDetector)
@@ -65,7 +64,6 @@ const Translation = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    console.log("Setting page stuff");
     document.body.dir = currentLanguage.dir || "ltr";
     document.title = "Cocktails 4 U";
   }, [currentLanguage, t]);

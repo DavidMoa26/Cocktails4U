@@ -12,6 +12,9 @@
 .shipping-form form{
     width: 100%;
 }
+.shipping-form div input{
+    padding: 0.5rem;
+}
 
 .shipping-choice{
     display: flex;
@@ -31,4 +34,14 @@
     font-size: 12px;
     margin-right: 5px;
     display: flex;
+}
+
+.credit-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.credit-card div{
+    width: 40%;
 }
