@@ -18,7 +18,6 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(express.json());
 app.use(cors());
 
-app.use(express.static(path.join('public')))
 app.use((req, res, next) => {
     if (req.header('x-forwarded-proto') !== 'https') {
         res.redirect(`https://${req.header('host')}${req.url}`);
@@ -26,6 +25,10 @@ app.use((req, res, next) => {
         next();
     }
 });
+
+app.use(express.static(path.join('public')))
+
+
 app.use('/api/user', register);
 app.use('/products', productsRoute)
 app.use('/api/payment', paymentRoute)

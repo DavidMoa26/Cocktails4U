@@ -36,7 +36,6 @@ const ContactForm = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(user);
     dispatch(contact(user));
   };
   return (

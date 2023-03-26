@@ -13,7 +13,7 @@ export const paymentRequest = createAsyncThunk(
     "cart/paymentRequest",
     async (values) => {
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API}/api/payment`, {
+            const response = await axios.post(`http://localhost:8000/api/payment`, {
                 paymentInfo: values
             })
             if (response)

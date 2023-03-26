@@ -2,23 +2,24 @@ import "./CustomCocktail.css";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
 import CocktailSteps from "./CocktailSteps/CocktailSteps";
-import { useNavigate } from "react-router-dom";
 
-const CustomCocktails = () => {
+const CustomCocktails = ({ hide }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="base-container">
+    <div className="base-container" style={{ display: hide }}>
       <h3>אתם תבחרו את המרכיבים ואנחנו נכין לכם את הקוקטייל</h3>
       <button
+        style={{ cursor: "not-allowed" }}
         onClick={() => {
           setIsOpen(true);
         }}
+        disabled
       >
         לחצ/י כאן כדי להתחיל
       </button>
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        <CocktailSteps step1 step2 step3 />
+        <CocktailSteps />
       </Modal>
     </div>
   );

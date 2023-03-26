@@ -108,11 +108,19 @@
 }
 @media(max-width:570px){
     .bar-tools-category :nth-child(-n + 6){
-        background-image: linear-gradient(to right, #F9B900, black);
-        width: 100px;
-        height: auto;
+        background-image: none;
+        width: 120px;
         border: 0;
-        margin: 0.3rem;
+        height: 40px;
+        margin: 0.5rem;  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bar-products-section div{
+        border-radius: 10px;
+        text-align: center;
     }
 }
 

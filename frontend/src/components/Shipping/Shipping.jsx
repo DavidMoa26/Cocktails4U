@@ -13,7 +13,6 @@ const Shipping = ({ total }) => {
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
-  console.log(cart);
 
   const [shippingDetails, setShippingDetails] = useState({
     id: "",
@@ -22,6 +21,7 @@ const Shipping = ({ total }) => {
     address: "",
     message: "",
     shipping: total > 349 ? 0 : 70,
+    cart: cart,
     cardNumber: "",
     expDate: "",
     CVV: "",

@@ -71,7 +71,8 @@
 .all-cocktails {
     display: flex;
     flex-direction: column;
-   text-align: center;
+    text-align: center;
+    justify-content: center;
 }
 .all-cocktails h2 {
     width: 100%;
@@ -82,7 +83,7 @@
 
 .all-cocktails div{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     height: 100%;
 }
@@ -96,11 +97,21 @@
 }
 @media(max-width:599px){
     .cocktails-category :nth-child(-n + 3){
-        background-image: linear-gradient(to right, #F9B900, black);
+        background-image: none;
         width: 150px;
-        height: auto;
         border: 0;
-        margin: 0.5rem;
+        height: 45px;
+        margin: 0.5rem;  
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+
+    .cocktails-category-section h2{
+        border-radius: 10px;
+        text-align: center;
+        
+    }
+
 
 }
